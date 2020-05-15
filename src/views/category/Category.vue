@@ -1,5 +1,6 @@
 <template>
-  <ul>
+<div class="wrapper">
+  <ul class="content">
     <li>abc1</li>
     <li>abc2</li>
     <li>abc3</li>
@@ -51,14 +52,31 @@
     <li>abc49</li>
     <li>abc50</li>
   </ul>
+</div>
 </template>
 
 <script>
+  import BScroll from 'better-scroll';
     export default {
-        name: "Category"
+      name: "Category",
+      data(){
+        return {
+          scroll:null,
+        }
+      },
+      mounted() {
+          this.scroll = new BScroll(document.querySelector('.wrapper'),{
+
+          });
+      }
     }
 </script>
 
 <style scoped>
+  .wrapper{
+    height: 150px;
+    background-color: red;
+    overflow: hidden;
+  }
 
 </style>
